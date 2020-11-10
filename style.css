@@ -71,10 +71,13 @@ body {
   height: 50px;
   margin-top: 10px;
   font-family: inherit;
+  color: #fff;
+  background-color: #1e2435;
   font-size: 30px;
   font-weight: 500;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 .btn-big {
   height: 110px;
