@@ -5,17 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="fonts/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <main class="calc">
+  <main id="calculator" class="calc">
     <div class="calc-main">
 
-      <div class="calc-header"></div>
+      <div class="calc-header">
+        <div><span class="icon-favorite-24px theme"></span></div>
+        <div class="clock"></div>
+        <div><span class="icon-arrow_right_alt-24px open"></span></div>
+      </div>
 
-      <div id="viewer" class="viewer calc-display">0</div>
+      
+      <div id="viewer" class="viewer calc-display">
+        <input class="display display-result" placeholder="0" type="text" disabled>
+        <input class="display display-operation" placeholder="192 + 23" type="text" disabled>
+
+      </div>
       
       <div class="calc-keyboard">
         
@@ -24,7 +34,7 @@
           <button class="num btn" data-num="7" type="button">7</button>
           <button class="num btn" data-num="4" type="button">4</button>
           <button class="num btn" data-num="1" type="button">1</button>
-          <button class="num btn" data-num="0" type="button">0</button>
+          <button class="num btn div-zero" data-num="0" type="button">0</button>
         </div>
 
         <div class="calc-keyboard-col">
@@ -51,7 +61,13 @@
         </div>
 
       </div>
+
+     
     </div>
+    <div class="modal">
+      <div><span class="icon-clear-24px close"></span></div>
+    </div>
+
   </main>
 
 
