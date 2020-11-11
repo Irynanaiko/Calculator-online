@@ -41,9 +41,9 @@ window.addEventListener("DOMContentLoaded", () => {
     divZero.addEventListener('click', divByZero);
 
     function divByZero() {
-        let dispContent = eval(displayRes.value);
+        let dispContent = eval(displayRes.value);   
         if (dispContent == 'Infinity') {
-            displayRes.value = 'Ви не можете ділити на 0';
+            displayRes.value = 'Помилка!';
             // displayRes.value.classList.add('.broken');
 
             console.log(dispContent);
