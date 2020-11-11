@@ -33,16 +33,19 @@ body {
 .calc-header {
   display: block;
   height: 25px;
-  background-color: #85b4bd;
+  background-color: #1e2435;
   margin-bottom: 15px;
 }
 
 /* display */
-
+.display,
 .calc-display {
   height: 110px;
-  background-color: #52a4b3;
+  width: 240px;
+  color: #fff;
+  background-color: #1e2435;
   margin-bottom: 15px;
+  font-size: 32px;
 }
 .calc-result {
   display: flex;
@@ -81,4 +84,19 @@ body {
 }
 .btn-big {
   height: 110px;
+}
+
+.broken {
+  color:red;
+}
+
+.clear,
+[data-ops] {
+  color: #fff;
+  background-color: #56c9da;
+}
+
+.viewer {
+  color: #fff;
+  font-size: 32px;
 }
