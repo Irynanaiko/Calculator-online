@@ -16,6 +16,7 @@ body {
 
 .calc {
   display: flex;
+  align-items: center;
   justify-content: center;
   padding-top: 50px;
   height: 100%;
@@ -26,7 +27,6 @@ body {
 .calc-main {
   width: 270px;
   min-height: 480px;
-  /* margin: 0 auto; */
   padding: 15px;
   background-color: #1a1b28;
   box-shadow: 0 10px 40px -10px #000;
@@ -52,7 +52,6 @@ body {
 /* display */
 
 .calc-display {
-  width: 240px;
   height: 110px;
   margin-bottom: 15px;
   font-size: 32px;
@@ -138,7 +137,7 @@ body {
 
 .modal {
   display: none;
-  min-height: 480px;
+  min-height: 495px;
   width: 270px;
   margin: 0;
   padding: 15px;
