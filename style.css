@@ -28,6 +28,7 @@ body {
   margin: 0 auto;
   padding: 15px;
   background-color: #1a1b28;
+  box-shadow: 0 10px 40px -10px #000;
 }
 
 .calc-header {
@@ -73,12 +74,23 @@ body {
   font-family: inherit;
   color: #fff;
   background-color: #1e2435;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
+.btn:active {
+  background-color: #212b42;
+}
 .btn-big {
   height: 110px;
+}
+.ops,
+.clear {
+  background-color: #52c9dc;
+}
+.ops:active,
+.clear:active {
+  background-color: #40acbd;
 }
