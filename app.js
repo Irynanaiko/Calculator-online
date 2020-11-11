@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function divByZero() {
         let dispContent = eval(displayRes.value);
         if (dispContent == 'Infinity') {
-            displayRes.value = 'Ви не можете ділити на 0';
+            displayRes.value = 'Помилка!';
             // displayRes.value.classList.add('.broken');
 
             console.log(dispContent)
