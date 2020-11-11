@@ -39,14 +39,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // By zero
     divZero.addEventListener('click', divByZero);
-    
+
     function divByZero() {
         let dispContent = eval(displayRes.value);
         if (dispContent == 'Infinity') {
             displayRes.value = 'Ви не можете ділити на 0';
             // displayRes.value.classList.add('.broken');
 
-            console.log(dispContent)
+            console.log(dispContent);
         }
 
     }
