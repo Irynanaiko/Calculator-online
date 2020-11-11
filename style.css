@@ -34,17 +34,21 @@ body {
 .calc-header {
   display: block;
   height: 25px;
-  background-color: #85b4bd;
+  background-color: #1e2435;
   margin-bottom: 15px;
 }
 
 /* display */
-
+.display,
 .calc-display {
   height: 110px;
-  background-color: #52a4b3;
+  width: 240px;
+  color: #fff;
+  background-color: #1e2435;
   margin-bottom: 15px;
+  font-size: 32px;
 }
+
 .calc-result {
   display: flex;
   justify-content: space-between;
@@ -86,11 +90,20 @@ body {
 .btn-big {
   height: 110px;
 }
-.ops,
-.clear {
-  background-color: #52c9dc;
+
+.broken {
+  color:red;
 }
-.ops:active,
-.clear:active {
-  background-color: #40acbd;
+
+.clear,
+.ops {
+  background-color: #56c9da;
+}
+.clear:active,
+.ops:active {
+  background-color: #2adaf5;
+}
+
+.viewer {
+  font-size: 32px;
 }
