@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
     divZero.addEventListener('click', divByZero);
 
     function divByZero() {
-        let dispContent = eval(displayRes.value);   
+        let dispContent = eval(displayRes.value);
         if (dispContent == 'Infinity') {
             displayRes.value = 'Помилка!';
             // displayRes.value.classList.add('.broken');
@@ -63,6 +63,27 @@ window.addEventListener("DOMContentLoaded", () => {
             displayRes.value = 'Ви не можете так робити';
         }
     }
+
+    // Open modal
+
+    const open = document.querySelector('.open');
+    const close = document.querySelector('.close');
+    const modal = document.querySelector('.modal');
+
+    open.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    close.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    //Clock
+    setInterval(() => {
+        document.querySelector(".clock").innerText = new Date().toLocaleTimeString();
+    }, 1000);
+
+
 
 
 });
