@@ -39,14 +39,29 @@ body {
 }
 
 /* display */
-.display,
+
 .calc-display {
-  height: 110px;
   width: 240px;
-  color: #fff;
-  background-color: #1e2435;
+  height: 110px;
   margin-bottom: 15px;
   font-size: 32px;
+  border: none;
+}
+.display {
+  width: 100%;
+  height: 70px;
+  font-size: 32px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  text-align: right;
+}
+.display-operation {
+  height: 40px;
+  font-weight: 700;
+  font-size: 22px;
+  border-top: 1px solid #1e2435;
 }
 
 .calc-result {
@@ -96,11 +111,13 @@ body {
 }
 
 .clear,
-.ops {
+.ops,
+.equals {
   background-color: #56c9da;
 }
 .clear:active,
-.ops:active {
+.ops:active,
+.equals:active {
   background-color: #2adaf5;
 }
 

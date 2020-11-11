@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
-    const display = document.querySelector('.display');
+    const displayRes = document.querySelector('.display-result');
+    const displayOp = document.querySelector('.display-operation');
     const equals = document.querySelector('.equals');
     const clear = document.querySelector('.clear');
     const num = document.querySelectorAll('[data-num]');
@@ -12,7 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     function digitPressed(ev) {
-        display.value += ev.target.innerText;
+        displayRes.value += ev.target.innerText;
     }
 
     // Opers
@@ -22,28 +23,30 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     function operPressed(ev) {
-        display.value += ev.target.innerText;
-        // display.value.style.color = '#56c9da';
+        displayRes.value += ev.target.innerText;
+        // displayRes.value.style.color = '#56c9da';
     }
 
     // Equal
     equals.addEventListener('click', calculate);
 
     function calculate() {
-        display.value = eval(display.value);
+        displayRes.value = eval(displayRes.value);
     }
 
     // Clear
-    clear.addEventListener('click', () => (display.value = ''));
+    clear.addEventListener('click', () => (displayRes.value = ''));
 
     // By zero
     divZero.addEventListener('click', divByZero);
-
+    
     function divByZero() {
-        let dispContent = eval(display.value);
+        let dispContent = eval(displayRes.value);
         if (dispContent == 'Infinity') {
-            display.value = 'Ви не можете ділити на 0';
-            // display.value.classList.add('.broken');
+            displayRes.value = 'Ви не можете ділити на 0';
+            // displayRes.value.classList.add('.broken');
+
+            console.log(dispContent)
         }
 
     }
@@ -54,10 +57,10 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     function multyOps() {
-        let dispContent = display.value;
+        let dispContent = displayRes.value;
         if (dispContent
             .includes('..' || '++' || '==' || '--' || '**' || '//')) {
-            display.value = 'Ви не можете так робити';
+            displayRes.value = 'Ви не можете так робити';
         }
     }
 
