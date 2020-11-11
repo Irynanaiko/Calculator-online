@@ -41,12 +41,12 @@ window.addEventListener("DOMContentLoaded", () => {
     divZero.addEventListener('click', divByZero);
     
     function divByZero() {
-        let dispContent = eval(displayRes.value);
+        let dispContent = eval(displayRes.value);   
         if (dispContent == 'Infinity') {
             displayRes.value = 'Помилка!';
             // displayRes.value.classList.add('.broken');
 
-            console.log(dispContent)
+            console.log(dispContent);
         }
 
     }
