@@ -16,6 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
         displayRes.value += ev.target.innerText;
     }
 
+    function digitPressed(ev) {
+        displayOp.value += ev.target.innerText;
+    }
+
     // Opers
 
     ops.forEach((button) => {
@@ -24,18 +28,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function operPressed(ev) {
         displayRes.value += ev.target.innerText;
-        // displayRes.value.style.color = '#56c9da';
+    }
+
+    function operPressed(ev) {
+        displayOp.value += ev.target.innerText;
     }
 
     // Equal
     equals.addEventListener('click', calculate);
 
     function calculate() {
-        displayRes.value = eval(displayRes.value);
+        displayRes.value = eval(displayOp.value);
     }
 
     // Clear
-    clear.addEventListener('click', () => (displayRes.value = ''));
+    clear.addEventListener('click', () => (displayRes.value = '', displayOp.value = ''));
 
     // By zero
     divZero.addEventListener('click', divByZero);
