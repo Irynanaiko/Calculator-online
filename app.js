@@ -44,23 +44,67 @@ window.addEventListener("DOMContentLoaded", () => {
         let dispContent = eval(displayRes.value);
         if (dispContent == 'Infinity') {
             displayRes.value = 'Помилка!';
-            // displayRes.value.classList.add('.broken');
-
-            console.log(dispContent);
         }
 
     }
 
     // Extra operators
-    ops.forEach((button) => {
-        button.addEventListener('click', multyOps);
-    });
+    // Minus
+    const minus = document.querySelector('.minus');
 
-    function multyOps() {
+    minus.addEventListener('click', extraMinus);
+
+    function extraMinus() {
         let dispContent = displayRes.value;
-        if (dispContent
-            .includes('..' || '++' || '==' || '--' || '**' || '//')) {
-            displayRes.value = 'Ви не можете так робити';
+        if (dispContent.includes('--')) {
+            displayRes.value = 'Помилка';
+        }
+    }
+    // Plus
+    const plus = document.querySelector('.plus');
+
+    plus.addEventListener('click', extraPlus);
+
+    function extraPlus() {
+        let dispContent = displayRes.value;
+        if (dispContent.includes('++')) {
+            displayRes.value = 'Помилка';
+        }
+    }
+
+    // Multy
+    const multy = document.querySelector('.multy');
+
+    multy.addEventListener('click', extraMulty);
+
+    function extraMulty() {
+        let dispContent = displayRes.value;
+        if (dispContent.includes('**')) {
+            displayRes.value = 'Помилка';
+        }
+    }
+
+    // Division
+    const div = document.querySelector('.div');
+
+    div.addEventListener('click', extraDiv);
+
+    function extraDiv() {
+        let dispContent = displayRes.value;
+        if (dispContent.includes('//')) {
+            displayRes.value = 'Помилка';
+        }
+    }
+
+    // Dots
+    const dots = document.querySelector('.dots');
+
+    dots.addEventListener('click', extraDots);
+
+    function extraDots() {
+        let dispContent = displayRes.value;
+        if (dispContent.includes('..')) {
+            displayRes.value = 'Помилка';
         }
     }
 
@@ -82,6 +126,52 @@ window.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
         document.querySelector(".clock").innerText = new Date().toLocaleTimeString();
     }, 1000);
+
+    // Theme
+    const theme = document.querySelector('.theme');
+
+    theme.addEventListener('click', changeTheme);
+
+    let clickTimes = 0;
+
+    function changeTheme() {
+        clickTimes++;
+
+        let main = document.querySelector('.calc-main');
+        let digits = document.querySelectorAll('.num');
+        let header = document.querySelector('.calc-header');
+
+        switch (clickTimes) {
+            case 1:
+                main.style.backgroundColor = '#fff';
+                modal.style.backgroundColor = '#fff';
+                header.style.backgroundColor = '#fff';
+                header.style.color = '#000';
+                displayRes.style.color = '#000';
+                close.style.color = "#000";
+
+                digits.forEach(item => {
+                    item.style.backgroundColor = '#f2f8fc';
+                    item.style.color = '#000';
+                });
+                break;
+
+        }
+
+
+
+    }
+
+
+    // Interest
+
+    const interest = document.querySelector('.interest');
+
+    interest.addEventListener('click', interestPressed);
+
+    function interestPressed(num, interest) {
+        displayRes.value = (num / 100) * interest;
+    }
 
 
 
