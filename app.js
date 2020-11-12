@@ -15,6 +15,9 @@ window.addEventListener("DOMContentLoaded", () => {
     function digitPressed(ev) {
         displayRes.value += ev.target.innerText;
     }
+    function digitPressed(ev) {
+        displayOp.value += ev.target.innerText;
+    }
 
     // Opers
 
@@ -24,18 +27,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function operPressed(ev) {
         displayRes.value += ev.target.innerText;
-        // displayRes.value.style.color = '#56c9da';
+    }
+    function operPressed(ev) {
+        displayOp.value += ev.target.innerText;
     }
 
     // Equal
     equals.addEventListener('click', calculate);
 
     function calculate() {
-        displayRes.value = eval(displayRes.value);
+        displayRes.value = eval(displayOp.value);
     }
 
     // Clear
-    clear.addEventListener('click', () => (displayRes.value = ''));
+    clear.addEventListener('click', () => (displayRes.value = '', displayOp.value = ''));
 
     // By zero
     divZero.addEventListener('click', divByZero);
@@ -44,8 +49,6 @@ window.addEventListener("DOMContentLoaded", () => {
         let dispContent = eval(displayRes.value);
         if (dispContent == 'Infinity') {
             displayRes.value = 'Помилка!';
-            // displayRes.value.classList.add('.broken');
-
             console.log(dispContent);
         }
 
@@ -83,7 +86,7 @@ window.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".clock").innerText = new Date().toLocaleTimeString();
     }, 1000);
 
-console.log();
+
 
 
 });
