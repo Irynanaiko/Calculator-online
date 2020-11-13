@@ -1,15 +1,15 @@
 window.addEventListener("DOMContentLoaded", () => {
-    const displayRes = document.querySelector('.display-result');
-    const displayOp = document.querySelector('.display-operation');
-    const equals = document.querySelector('.equals');
-    const clear = document.querySelector('.clear');
-    const num = document.querySelectorAll('[data-num]');
-    const ops = document.querySelectorAll('.ops');
-    const divZero = document.querySelector('.div-zero');
+    const displayRes = document.querySelector(".display-result");
+    const displayOp = document.querySelector(".display-operation");
+    const equals = document.querySelector(".equals");
+    const clear = document.querySelector(".clear");
+    const num = document.querySelectorAll("[data-num]");
+    const ops = document.querySelectorAll(".ops");
+    const divZero = document.querySelector(".div-zero");
 
     // Digits
     num.forEach((button) => {
-        button.addEventListener('click', digitPressed);
+        button.addEventListener("click", digitPressed);
     });
 
     function digitPressed(ev) {
@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Opers
 
     ops.forEach((button) => {
-        button.addEventListener('click', operPressed);
+        button.addEventListener("click", operPressed);
     });
 
     function operPressed(ev) {
@@ -35,152 +35,155 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // Equal
-    equals.addEventListener('click', calculate);
+    equals.addEventListener("click", calculate);
 
     function calculate() {
         displayRes.value = eval(displayOp.value);
     }
 
     // Clear
-    clear.addEventListener('click', () => (displayRes.value = '', displayOp.value = ''));
+    clear.addEventListener(
+        "click",
+        () => ((displayRes.value = ""), (displayOp.value = ""))
+    );
 
     // By zero
-    divZero.addEventListener('click', divByZero);
+    divZero.addEventListener("click", divByZero);
 
     function divByZero() {
-        let dispContent = eval(displayRes.value);
-        if (dispContent == 'Infinity') {
-            displayRes.value = 'Помилка!';
+        let dispContent = eval(displayOp.value);
+        if (dispContent == "Infinity") {
+            displayOp.value = "Помилка!";
         }
-
     }
+
+    // Plus-minus
+    // const plusMinus = document.querySelector(".plus-minus");
+
+    // plusMinus.addEventListener("click", (ev) => {
+    //     displayOp.value = +ev.target.innerText * -1;
+    // });
+
 
     // Extra operators
     // Minus
-    const minus = document.querySelector('.minus');
+    const minus = document.querySelector(".minus");
 
-    minus.addEventListener('click', extraMinus);
+    minus.addEventListener("click", extraMinus);
 
     function extraMinus() {
-        let dispContent = displayRes.value;
-        if (dispContent.includes('--')) {
-            displayRes.value = 'Помилка';
+        let dispContent = displayOp.value;
+        if (dispContent.includes("--")) {
+            displayOp.value = "Помилка!";
         }
     }
     // Plus
-    const plus = document.querySelector('.plus');
+    const plus = document.querySelector(".plus");
 
-    plus.addEventListener('click', extraPlus);
+    plus.addEventListener("click", extraPlus);
 
     function extraPlus() {
-        let dispContent = displayRes.value;
-        if (dispContent.includes('++')) {
-            displayRes.value = 'Помилка';
+        let dispContent = displayOp.value;
+        if (dispContent.includes("++")) {
+            displayOp.value = "Помилка!";
         }
     }
 
     // Multy
-    const multy = document.querySelector('.multy');
+    const multy = document.querySelector(".multy");
 
-    multy.addEventListener('click', extraMulty);
+    multy.addEventListener("click", extraMulty);
 
     function extraMulty() {
-        let dispContent = displayRes.value;
-        if (dispContent.includes('**')) {
-            displayRes.value = 'Помилка';
+        let dispContent = displayOp.value;
+        if (dispContent.includes("**")) {
+            displayOp.value = "Помилка!";
         }
     }
 
     // Division
-    const div = document.querySelector('.div');
+    const div = document.querySelector(".div");
 
-    div.addEventListener('click', extraDiv);
+    div.addEventListener("click", extraDiv);
 
     function extraDiv() {
-        let dispContent = displayRes.value;
-        if (dispContent.includes('//')) {
-            displayRes.value = 'Помилка';
+        let dispContent = displayOp.value;
+        if (dispContent.includes("//")) {
+            displayOp.value = "Помилка!";
         }
     }
 
     // Dots
-    const dots = document.querySelector('.dots');
+    const dots = document.querySelector(".dots");
 
-    dots.addEventListener('click', extraDots);
+    dots.addEventListener("click", extraDots);
 
     function extraDots() {
-        let dispContent = displayRes.value;
-        if (dispContent.includes('..')) {
-            displayRes.value = 'Помилка';
+        let dispContent = displayOp.value;
+        if (dispContent.includes("..")) {
+            displayOp.value = "Помилка!";
         }
     }
 
     // Open modal
 
-    const open = document.querySelector('.open');
-    const close = document.querySelector('.close');
-    const modal = document.querySelector('.modal');
+    const open = document.querySelector(".open");
+    const close = document.querySelector(".close");
+    const modal = document.querySelector(".modal");
 
-    open.addEventListener('click', () => {
-        modal.style.display = 'block';
+    open.addEventListener("click", () => {
+        modal.style.display = "block";
     });
 
-    close.addEventListener('click', () => {
-        modal.style.display = 'none';
+    close.addEventListener("click", () => {
+        modal.style.display = "none";
     });
 
     //Clock
     setInterval(() => {
-        document.querySelector(".clock").innerText = new Date().toLocaleTimeString();
+        document.querySelector(
+            ".clock"
+        ).innerText = new Date().toLocaleTimeString();
     }, 1000);
 
     // Theme
-    const theme = document.querySelector('.theme');
+    const theme = document.querySelector(".theme");
 
-    theme.addEventListener('click', changeTheme);
+    theme.addEventListener("click", changeTheme);
 
     let clickTimes = 0;
 
     function changeTheme() {
         clickTimes++;
 
-        let main = document.querySelector('.calc-main');
-        let digits = document.querySelectorAll('.num');
-        let header = document.querySelector('.calc-header');
+        let main = document.querySelector(".calc-main");
+        let digits = document.querySelectorAll(".num");
+        let header = document.querySelector(".calc-header");
 
         switch (clickTimes) {
             case 1:
-                main.style.backgroundColor = '#fff';
-                modal.style.backgroundColor = '#fff';
-                header.style.backgroundColor = '#fff';
-                header.style.color = '#000';
-                displayRes.style.color = '#000';
+                main.style.backgroundColor = "#fff";
+                modal.style.backgroundColor = "#fff";
+                header.style.backgroundColor = "#fff";
+                header.style.color = "#000";
+                displayRes.style.color = "#000";
                 close.style.color = "#000";
 
-                digits.forEach(item => {
-                    item.style.backgroundColor = '#f2f8fc';
-                    item.style.color = '#000';
+                digits.forEach((item) => {
+                    item.style.backgroundColor = "#f2f8fc";
+                    item.style.color = "#000";
                 });
                 break;
-
         }
-
-
-
     }
-
 
     // Interest
 
-    const interest = document.querySelector('.interest');
+    // const interest = document.querySelector('.interest');
 
-    interest.addEventListener('click', interestPressed);
+    // interest.addEventListener('click', interestPressed);
 
-    function interestPressed(num, interest) {
-        displayRes.value = (num / 100) * interest;
-    }
-
-
-
-
+    // function interestPressed(num, interest) {
+    //     displayRes.value = (num / 100) * interest;
+    // }
 });
